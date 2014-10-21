@@ -44,7 +44,7 @@ These questions all pertain to the data above and we only ask for answers to the
 
 Using [Apache Pig](#apache-pig) (see next section for more details on it), determine the which pairs of male and female artists have the largest **difference** in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
 
-An answer to this question should first determine the "net sentiment" for each artist.  For example, _Garth Brooks_ is mentioned in the example dataset above 4 times and the net sentiment for him over all mentions is 1 + 1 + 0 + -1 = 1.  This value should be calculated for each artist and then all the male and female artists should be paired together and ordered by the absolute value of the difference in that value for each.
+An answer to this question should first determine the "net sentiment" for each artist.  For example, _Garth Brooks_ is mentioned in the example dataset above 4 times and the net sentiment for him over all mentions is 1 + 1 + 0 + -1 = 1.  This value should be calculated for each artist and then all the male and female artists should be paired together and ordered by the absolute value of the difference in that value for each pair.
 
 A result for the example dataset would be (ordered by difference):
 
