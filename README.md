@@ -72,7 +72,7 @@ Finally, assume that the metric calculated in Question 1 for sentiment dissonanc
 
 Given this, write a program (in python, java, or bash) that will take strings on stdin in the form ```female.artist,male.artist``` (one such pair per line) and output a decision as 'yes' or 'no' for each pair.  This program can assume that only artists seen in the input dataset for Question 1 will be used and that you can do anything within the program you'd like, but you must make a decision for each pair at the time it is seen (i.e. you can't look at them all and then decide).
 
-*Note:* No googoling solutions for this, we'd much prefer your own approach.
+*Note:* No googoling solutions for this please!  We'd much prefer your own approach.
 
 
 ##Question 3: Cohort Sentiment
