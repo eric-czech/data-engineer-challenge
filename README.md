@@ -42,7 +42,9 @@ Questions
 
 These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see answers to the others as well (they appear roughly in order of difficulty).
 
-_Question 1: Sentiment Dissonance_ - Using Apache Pig (see next section for more details on it), determine the which pairs of male and female artists have the largest *difference* in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
+##Question 1: Sentiment Dissonance
+
+Using Apache Pig (see next section for more details on it), determine the which pairs of male and female artists have the largest *difference* in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
 
 An answer to this question should first determine the "net sentiment" for each artist.  For example, _Garth Brooks_ is mentioned in the example dataset above 4 times and the net sentiment for him over all mentions is 1 + 1 + 0 + -1 = 1.  This value should be calculated for each artist and then all the male and female artists should be paired together and ordered by the absolute value of the *difference* in that value for each.
 
@@ -67,7 +69,9 @@ And we'd conclude that Meghan Trainor and Sam Smith make for the best pair.
 1. We don't care about pairings of same sex artists (e.g. _Garth Brooks_ and _Sam Smith_)
 2. The _user.name_ field is irrelevant for this question
 
-_Question 2: Decision Time_ - Assume you run your own record label and your job is to determine what proposed male/female duet is worth producing music for.  You'll encounter these opportunities once a week over the course of a year and each time you'll have to make a decision right away, and you can only choose one song to produce that year.  For example, you might run into a chance to produce a duet for Micheal Buble and Rihanna in week 1 and then another for Kenny Chesney and Iggy Azalea in week 2 but you can't want until the end of week 2 to decide -- each opportunity expires at the end of the week in which it arose.
+##Question 2: Making Decisions
+
+Assume you run your own record label and your job is to determine what proposed male/female duet is worth producing music for.  You'll encounter these opportunities once a week over the course of a year and each time you'll have to make a decision right away, and you can only choose one song to produce that year.  For example, you might run into a chance to produce a duet for Micheal Buble and Rihanna in week 1 and then another for Kenny Chesney and Iggy Azalea in week 2 but you can't want until the end of week 2 to decide -- each opportunity expires at the end of the week in which it arose.
 
 Finally, assume that the metric calculated in Question 1 for sentiment dissonance is a perfect estimator of success.  Each time you run into the chance to produce a song for a duet, you can calculate the value from Question 1 for it and use that to make your decision.
 
@@ -76,7 +80,9 @@ Given this, write a program (in python, java, or bash) that will take strings on
 *Note:* No googoling solutions for this, we'd much prefer your own approach.
 
 
-_Question 3: Cohort Sentiment_ - Using Pig, determine the cumulative, net sentiment for each pair of male and female artists that are mentioned by the *same* users.
+##Question 3: Cohort Sentiment
+
+Using Pig again, determine the cumulative, net sentiment for each pair of male and female artists that are mentioned by the *same* users.
 
 An answer to this question should first determine which artists are mentioned by the same users and then for each of those users, determine their "net sentiment" about the pairing.  For example, _user1_ in the example dataset above mentions both _Miley Cyrus_ and _Garth Brooks_ with a sentiment of 1 (i.e. positive) for each.  The "net sentiment" for that user about this artist pairing is then 1 + 1 = 2.  Keep in mind that we only care about pairs containing one male and one female artist though -- so we wouldn't care about the net value for this user in regards to a pairing of say _Elton John_ and _Garth Brooks_, who are both male artists mentioned (by _user1_).
 
@@ -96,7 +102,7 @@ Nicki Minaj | Garth Brooks | 4
 Miley Cyrus | Elton John | 0
 Nicki Minaj | Sam Smith | 4
 
-_Question 4: TBD_ -
+##Question 4: TBD
 
 
 Apache Pig
