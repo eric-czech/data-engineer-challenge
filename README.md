@@ -42,7 +42,7 @@ These questions all pertain to the data above and we only ask for answers to the
 
 ##Question 1: Sentiment Dissonance
 
-Using Apache Pig (see next section for more details on it), determine the which pairs of male and female artists have the largest **difference** in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
+Using [Apache Pig](#apache-pig) (see next section for more details on it), determine the which pairs of male and female artists have the largest **difference** in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
 
 An answer to this question should first determine the "net sentiment" for each artist.  For example, _Garth Brooks_ is mentioned in the example dataset above 4 times and the net sentiment for him over all mentions is 1 + 1 + 0 + -1 = 1.  This value should be calculated for each artist and then all the male and female artists should be paired together and ordered by the absolute value of the difference in that value for each.
 
@@ -99,7 +99,54 @@ Miley Cyrus | Elton John | 0
 
 Apache Pig
 =============
-TBD
+
+Pig is a high-level, imperative-style programming language that is great for data munging.  As a relational algebra, it looks a lot like SQL but is much better for chaining operations together into more complicated workflows.
+
+We installed pig, python, and java (using [Mortar](https://www.mortardata.com/products/mortar-free)) on an EC2 instance that you can use.  After we give you everything you'd need to know to login (as user ```nbs```), you'll find everything you need in the directory ```/home/nbs/data_engineer_challenge```.
+
+We placed a started on a Pig script for you that will read the input data from the correct place (```~/data_engineer_challenge/data/sentiment```) and count the number of times each artist is mentioned.  Here is an example of how to run that script as well as the expected output:
+
+```
+nbs@ip-10-169-43-241:~$ cd data_engineer_challenge/
+nbs@ip-10-169-43-241:~/data_engineer_challenge$ mortar local:run pigscripts/sentiment.pig 
+
+Launching Pig: 3 jobs scheduled
+Full logs will be written to logs/local-pig.log
+
+Starting job job_local_0001
+Map 001: 100%       Input records:  1	Output records: 1
+
+... [ Omitting some output for brevity ] ...
+
+Pig run completed in 21 seconds. 3/3 jobs successful.
+
+(artist1,1)
+Success! - No error expected.
+```
+
+The ```mortar local:run``` command should be all you need to run any pigscripts you create or modify in ~/data_engineer_challenge/pigscripts.  The example script, sentiment.pig, looks like this:
+
+```
+-- Load raw data from csv files in project data directory using comma delimiter
+raw = LOAD '/home/nbs/data_engineer_challenge/data/sentiment' USING PigStorage(',') 
+  AS (user_name:chararray, artist_name:chararray, artist_gender:chararray, sentiment:int);
+
+-- Group all the mention records by artist name
+grouped = GROUP raw BY artist_name;
+
+-- Determine the number of records associated with each artist
+counts = FOREACH grouped GENERATE group AS artist_name, COUNT(raw) AS count;
+
+-- Order the results by the number of records per artist
+result = ORDER counts BY count DESC;
+
+-- Print the results to stdout
+DUMP result;
+
+```
+
+Hopefully that seems pretty intuitive.  There are many tutorials out there like [this one](http://hortonworks.com/hadoop-tutorial/how-to-process-data-with-apache-pig/), and for the sake of answering the questions you shouldn't have to learn about many Pig constructs other than the basic ones like [FOREACH](http://pig.apache.org/docs/r0.12.0/basic.html#foreach), [JOIN](http://pig.apache.org/docs/r0.12.0/basic.html#join-inner), [GROUP](http://pig.apache.org/docs/r0.12.0/basic.html#group), [ORDER](http://pig.apache.org/docs/r0.12.0/basic.html#order-by), [CROSS](http://pig.apache.org/docs/r0.12.0/basic.html#cross), and [STORE](http://pig.apache.org/docs/r0.12.0/basic.html#store)/[LOAD](http://pig.apache.org/docs/r0.12.0/basic.html#load).  There are a lot of others available though so you might find some fancy ways to use them.  The version of Pig installed is 0.12 and you can find the [full documentation here](http://pig.apache.org/docs/r0.12.0/).
+
 
 
 
