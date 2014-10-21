@@ -38,7 +38,7 @@ user4     | Garth Brooks | male | -1 |
 Questions
 ==========
 
-These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see answers to the others as well (they appear roughly in order of difficulty).
+These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see an answer to the third one too.
 
 ##Question 1: Sentiment Dissonance
 
@@ -72,10 +72,10 @@ Finally, assume that the metric calculated in Question 1 for sentiment dissonanc
 
 Given this, write a program (in python, java, or bash) that will take strings on stdin in the form ```female.artist,male.artist``` (one such pair per line) and output a decision as 'yes' or 'no' for each pair.  This program can assume that only artists seen in the input dataset for Question 1 will be used and that you can do anything within the program you'd like, but you must make a decision for each pair at the time it is seen (i.e. you can't look at them all and then decide).
 
-*Note:* No googoling solutions for this please!  We'd much prefer your own approach.
+*Note:* No Googol-ing solutions for this please!  We'd much prefer your own approach.
 
 
-##Question 3: Cohort Sentiment
+##Question 3: Cohort Sentiment (Optional)
 
 Using Pig again, determine the cumulative, net sentiment for each pair of male and female artists that are mentioned by the **same** users.
 
@@ -104,7 +104,7 @@ Pig is a high-level, imperative-style programming language that is great for dat
 
 We installed pig, python, and java (using [Mortar](https://www.mortardata.com/products/mortar-free)) on an EC2 instance that you can use.  After we give you everything you'd need to know to login (as user ```nbs```), you'll find everything you need in the directory ```/home/nbs/data_engineer_challenge```.
 
-We placed a started on a Pig script for you that will read the input data from the correct place (```~/data_engineer_challenge/data/sentiment```) and count the number of times each artist is mentioned.  Here is an example of how to run that script as well as the expected output:
+We started on a Pig script for you that will read the input data from the correct place (```~/data_engineer_challenge/data/sentiment```) and count the number of times each artist is mentioned.  Here is an example of how to run that script as well as the expected output:
 
 ```
 nbs@ip-10-169-43-241:~$ cd data_engineer_challenge/
