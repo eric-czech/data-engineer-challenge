@@ -2,7 +2,7 @@ Data Engineering Challenge
 =======================
 
 
-Collaborative efforts in music are always a gamble.  While much of top 40 music consists of content resulting from partnerships between two or more artists, there are risks involved with bringing together such artists who often have opposing styles and motives.  However, these risks are often worth the reward and juxtapositions of contrasting styles have led to some very successful efforts like those from Eminem and Dido ([Stan](https://www.youtube.com/watch?v=gOMhN-hfMtY)), P!nk and Nate Ruess ([Just Give Me a Reason](https://www.youtube.com/watch?v=OpQFFLBMEPI)), or even Lady Gaga and Kermit the Frog ([Gypsy](https://www.youtube.com/watch?v=WOvxX7SHKiE)). 
+Collaborative efforts in music are always a gamble.  While much of top 40 music consists of content resulting from partnerships between two or more artists, there are risks involved with bringing together such artists who may have opposing styles and motives.  However, these risks are often worth the reward and juxtapositions of contrasting styles have led to some very successful efforts like those from Eminem and Dido ([Stan](https://www.youtube.com/watch?v=gOMhN-hfMtY)), P!nk and Nate Ruess ([Just Give Me a Reason](https://www.youtube.com/watch?v=OpQFFLBMEPI)), or even Lady Gaga and Kermit the Frog ([Gypsy](https://www.youtube.com/watch?v=WOvxX7SHKiE)). 
 
 These partnerships aren't always between men and women but a lot of the more interesting ones are.  In this challenge, you'll use a (fictituous) dataset to try to determine what pairings like this (i.e. between male and female artists) would be most "interesting" based on the sentiment within statements made by users online.  The sentiment of each statement will fall into one of 3 categories, positive, negative, or neutral.  Your job will then be to pair the artists up and draw conclusions about the sentiment around each pair.
 
@@ -38,7 +38,7 @@ user4     | Garth Brooks | male | -1 |
 Questions
 ==========
 
-These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see an answer to the third one too.
+These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see answers to the others too.
 
 ##Question 1: Sentiment Dissonance
 
@@ -94,7 +94,26 @@ Meghan Trainor | Elton John | -2
 Miley Cyrus | Garth Brooks | 2
 Miley Cyrus | Elton John | 0
 
-##Question 4: TBD
+##Question 4: Anomalies (Optional)
+
+In all the previous questions, **net** sentiment was calculated or used to create a solution -- which is not ideal.  Considering only positive/negative/nuetral opinions like this can be useful but also involves a significant loss of information, namely how **many** opinions are being included.  A net value of 0 calculated this way could result from a single neutral opinion or 1000 opinions, half negative and half positive.
+
+This question then will involve taking a different approach to Question 1 where instead of using net sentiment, you will use the **frequency** of each sentiment type to figure out which artist pairs are *least* like the others.  The first step in answering this question will be to compute a very similar result to Question 1 but 3 statistics instead of 1, like this:
+
+female.artist | male.artist | num.positive  | num.negative | num.neutral
+--------------|-------------|---------------------|--------------------|------------------
+Meghan Trainor | Sam Smith | 2 | 2 | 0
+Meghan Trainor | Garth Brooks | 2 | 3 | 1
+.. and so on ...
+
+Note that the sign or value of the sentiment no longer matters -- the result above includes only the count of the number of occurrences each sentiment type for a specific artist pair.
+
+Given these frequencies, we ask that you determine which 10 artist pairs are *least* like the others.  For example, if we were to ignore neutral sentiment for now and just consider positive and negative sentiment, then this is how the different artist pairings relate to one another:
+
+(each dot corresponds to a single artist pair)
+
+<img src="https://dl.dropboxusercontent.com/u/65158725/data-challenge-scatter-plot.png"/>
+
 
 
 Apache Pig
