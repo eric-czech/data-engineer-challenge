@@ -118,6 +118,7 @@ Given these frequencies, we ask that you determine which 10 artist pairs (of dif
 *Notes*:
 
 1. There is no "right" answer to this question so feel free to take any approach you want!
+2. You do **not** have to use Pig for this -- you can use anything you want like java, python + pandas, R, SQL or whatever you think would be best
 2. The _user.name_ field is irrelevant for this question
 
 Apache Pig
