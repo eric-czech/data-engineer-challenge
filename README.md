@@ -109,7 +109,7 @@ Meghan Trainor | Garth Brooks | 2 | 3 | 1
 
 Note that the sign or value of the sentiment no longer matters -- the result above includes only the count of the number of occurrences each sentiment type for a specific artist pair.
 
-Given these frequencies, we ask that you determine which 10 artist pairs (of differing gender) are *least* like the others based on all 3 statistics.  For example, if we were to ignore neutral sentiment for now and just consider positive and negative sentiment, then this is how the different artist pairings relate to one another:
+Given these frequencies, we ask that you determine which 10 artist pairs (of differing gender) are *least* like the others **based on all 3 statistics**.  For example, if we were to ignore neutral sentiment for now and just consider positive and negative sentiment, then this is how the different artist pairings relate to one another:
 
 (each dot corresponds to a single artist pair)
 
