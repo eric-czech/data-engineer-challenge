@@ -143,7 +143,13 @@ Map 001: 100%       Input records:  1	Output records: 1
 
 Pig run completed in 21 seconds. 3/3 jobs successful.
 
-(artist1,1)
+(Sammy Hagar,79)
+(Carrie Underwood,76)
+(Demi Lovato,74)
+(Andrew W.K.,73)
+(Akon,72)
+... [ Omitting some output for brevity ] ...
+
 Success! - No error expected.
 ```
 
