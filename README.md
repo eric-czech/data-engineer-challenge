@@ -38,7 +38,7 @@ user4     | Garth Brooks | male | -1 |
 Questions
 ==========
 
-These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see answers to the others too.
+These questions all pertain to the data above and we only ask for answers to the first two, but if you're enjoying the problem then we would love to see answers to the others as well.
 
 ##Question 1: Sentiment Dissonance
 
