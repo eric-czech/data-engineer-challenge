@@ -42,7 +42,7 @@ These questions all pertain to the data above and we only ask for answers to the
 
 ##Question 1: Sentiment Dissonance
 
-Using [Apache Pig](#apache-pig) (see next section for more details on it), determine the which pairs of male and female artists have the largest **difference** in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
+Using [Apache Pig](#apache-pig) (see next section for more details on it), determine the 10 male and female artist pairs that have the largest **difference** in cumulative sentiment.  We'll assume this difference would make the pairing more "interesting" since the public opinion about each is polarized.
 
 An answer to this question should first determine the "net sentiment" for each artist.  For example, _Garth Brooks_ is mentioned in the example dataset above 4 times and the net sentiment for him over all mentions is 1 + 1 + 0 + -1 = 1.  This value should be calculated for each artist and then all the male and female artists should be paired together and ordered by the absolute value of the difference in that value for each pair.
 
@@ -108,13 +108,17 @@ Meghan Trainor | Garth Brooks | 2 | 3 | 1
 
 Note that the sign or value of the sentiment no longer matters -- the result above includes only the count of the number of occurrences each sentiment type for a specific artist pair.
 
-Given these frequencies, we ask that you determine which 10 artist pairs are *least* like the others.  For example, if we were to ignore neutral sentiment for now and just consider positive and negative sentiment, then this is how the different artist pairings relate to one another:
+Given these frequencies, we ask that you determine which 10 artist pairs are *least* like the others based on all 3 statistics.  For example, if we were to ignore neutral sentiment for now and just consider positive and negative sentiment, then this is how the different artist pairings relate to one another:
 
 (each dot corresponds to a single artist pair)
 
-<img src="https://dl.dropboxusercontent.com/u/65158725/data-challenge-scatter-plot.png"/>
+<img width="600" height="400" src="https://dl.dropboxusercontent.com/u/65158725/data-challenge-scatter-plot.png"/>
 
+*Note*: The _user.name_ field is irrelevant for this question
 
+1. There is no "right" answer to this question so feel free to take any approach you want!
+2. We don't care about pairings of same sex artists (e.g. _Garth Brooks_ and _Sam Smith_)
+2. The _user.name_ field is irrelevant for this question
 
 Apache Pig
 =============
