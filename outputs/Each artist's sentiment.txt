@@ -1,3 +1,1 @@
-({'Akon': 10, 'Austin Mahone': 23, '2 Chainz': 13, 'Sammy Hagar': -3, 'David Bowie': 0, 'Justin Timberlake': 15, 'Johnny Cash': 12, 'Andrew W.K.': 11, 'Blake Shelton': 18, 'Billy Joel': 8, 'Paul McCartney': 19, 'Pitbull': 20},
-
-{'Dolly Parton': 13, 'Carrie Underwood': 10, 'Beyonce': -6, 'Ellie Goulding': -5, 'Adele': -8, 'Celine Dion': 34, 'Rihanna': 18, 'Demi Lovato': 9, 'Katy Perry': 27, 'Madonna': 26, 'Missy Elliot': 17, 'Iggy Azalea': 20, 'Taylor Swift': 19})
+({'Akon': 10, 'Austin Mahone': 23, '2 Chainz': 13, 'Sammy Hagar': -3, 'David Bowie': 0, 'Justin Timberlake': 15, 'Johnny Cash': 12, 'Andrew W.K.': 11, 'Blake Shelton': 18, 'Billy Joel': 8, 'Paul McCartney': 19, 'Pitbull': 20}, {'Dolly Parton': 13, 'Carrie Underwood': 10, 'Beyonce': -6, 'Ellie Goulding': -5, 'Adele': -8, 'Celine Dion': 34, 'Rihanna': 18, 'Demi Lovato': 9, 'Katy Perry': 27, 'Madonna': 26, 'Missy Elliot': 17, 'Iggy Azalea': 20, 'Taylor Swift': 19})
