@@ -1,3 +1,6 @@
+This is my submission to the challenge below. I've answered questions 1-3. The ouput to questions one and three are uploading as a .txt file, but the code to all three questions are available
+
+
 Data Engineering Challenge
 =======================
 
